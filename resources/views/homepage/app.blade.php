@@ -29,5 +29,6 @@ This is a work in progress, and is currently not done. You can come back later t
 <!-- Jquery JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('customer') }}/assets/js/main.js"></script>
-
+<script src="{{ asset('customer') }}/assets/js/main.vue"></script>
+@yield('script')
 </html>

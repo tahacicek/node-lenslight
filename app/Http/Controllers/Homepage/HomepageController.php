@@ -45,4 +45,7 @@ class HomepageController extends Controller
         }
         return view('homepage.index', compact('data'));
     }
+
+    //vue
+
 }

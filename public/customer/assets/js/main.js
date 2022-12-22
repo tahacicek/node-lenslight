@@ -31,7 +31,8 @@ const COMMANDS = {
     code">lumen</span
     >`,
 
-
+    contact:
+        ``,
 };
 
 let userInput, terminalOutput;
@@ -84,6 +85,30 @@ const execute = function executeCommand(input) {
         terminalOutput.innerHTML = welcome_text + `<div class="terminal-line"></div>`;
         return;
     }
+
+    //if input is contact, then show contact-form id and hide terminal with animation
+    if (input == "contact") {
+        $("#contact-form").show();
+        $("#terminal").hide();
+        return;
+    }
+
+    //if click #back then show terminal and hide contact-form with animation
+            document.getElementById("back").onclick = function () {
+                document.getElementById("contact-form").style.display = "none";
+                document.getElementById("terminal").style.display = "block";
+                return;
+            };
+
+
+ // if (input == "contact") {
+    //     document.getElementById("form-contact").style.display = "block";
+    //     document.getElementById("terminal").style.display = "none";
+    //     //delay
+    //     return;
+    // }
+
+
 
     terminalOutput.innerHTML = `${terminalOutput.innerHTML
         }<div class="terminal-line">${output}</div>`;
@@ -164,17 +189,6 @@ const cursorAnimation = () => {
 const indexTyping = setInterval(addLetter, time);
 setInterval(cursorAnimation, 200);
 
-
-//offcanvas menu
-$(document).ready(function () {
-    $('[data-toggle="offcanvas"]').click(function () {
-        $('.row-offcanvas').toggleClass('active')
-    });
-},
-
-);
-
-//offcanvas menu
 
 
 
